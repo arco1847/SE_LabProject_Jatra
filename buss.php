@@ -30,7 +30,7 @@ a:hover, a:active {
 </style>
 	
 <table>
-<tr><th>Number_PLate</th><th>Model</th><th>Colour</th><th>Price</th><th>Update</th><th>Delete</th></tr>
+<tr><th>Number_plat</th><th>Seat</th><th>Price</th><th>Update</th><th>Delete</th></tr>
 <?php
 $hostname='localhost';
 $username='root';
@@ -45,17 +45,16 @@ else
 {
 	echo"conn false";
 }
-$show="SELECT * FROM car";
+$show="SELECT * FROM bus";
 $q=mysqli_query($con,$show);
 if($q)
 {
 while($data=mysqli_fetch_assoc($q))
 {
-	$Number_PLate=$data['Number_PLate'];
-$Model=$data['Model'];
-$Colour=$data['Colour'];
+	$Number_plat=$data['Number_plat'];
+$Seat=$data['Seat'];
 $Price=$data['Price'];
-echo"<tr><td>$Number_PLate</td> <td>$Model</td> <td>$Colour</td>  <td>$Price</td><td><a href='editc.php?Number_PLate=$data[Number_PLate]'>edit</td><td><a href='deletec.php?Number_PLate=$data[Number_PLate]'>delete</a></td></tr>";
+echo"<tr><td>$Number_plat</td> <td>$Seat</td>   <td>$Price</td><td><a href='busu.php?Number_plat=$data[Number_plat]'>edit</td><td><a href='busd.php?Number_plat=$data[Number_plat]'>delete</a></td></tr>";
 }
 }
 ?>
