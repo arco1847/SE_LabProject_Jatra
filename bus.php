@@ -16,7 +16,6 @@
             <br>
             <br>
             <a href="buss.php">show bus</a>
-          
             </body>
     </head>
 </html>

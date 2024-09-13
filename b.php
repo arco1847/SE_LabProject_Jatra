@@ -13,11 +13,13 @@
   width: 32%;
   padding: 5px;
   height: 300px; /* Should be removed. Only for demonstration */
+
 }
 .row:after {
   content: "";
   display: table;
   clear: both;
+
 }
 div.gallery {
     

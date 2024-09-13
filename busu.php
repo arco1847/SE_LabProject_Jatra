@@ -4,6 +4,7 @@ $username='root';
 $password='';
 $dbname='jatra';
 $con=mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";

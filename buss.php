@@ -28,7 +28,6 @@ a:hover, a:active {
   background-color: red;
 }
 </style>
-	
 <table>
 <tr><th>Number_plat</th><th>Seat</th><th>Price</th><th>Update</th><th>Delete</th></tr>
 <?php
