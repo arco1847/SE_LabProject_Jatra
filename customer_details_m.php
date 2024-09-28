@@ -2,6 +2,7 @@
 <head>
 <body>
 <style>
+
 table{
 	border-collapse:collapse;
 	width:100%;
@@ -10,6 +11,7 @@ table{
 	font-size:25px;
 	text-align:center;
 }
+
 th{
 	background-color:#d96459;
 	color:white;
@@ -27,16 +29,20 @@ a:link, a:visited {
 a:hover, a:active {
   background-color: red;
 }
+
+
+
 </style>
 <table>
 <tr><th>name</th><th>email</th><th>contactno</th><th>pickup_address</th><th>Pickup_time</th><th>price</th><th>Number_plate</th><th>location</th><th>hreason</th><th>days</th><th>delete</th></tr>
 <?php
 
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";
@@ -45,8 +51,8 @@ else
 {
 	echo"conn false";
 }
-$show="SELECT * FROM customer_details_m";
-$q=mysqli_query($con,$show);
+$show = "SELECT * FROM customer_details_m";
+$q = mysqli_query($con,$show);
 if($q)
 {
     while($data=mysqli_fetch_assoc($q)){
