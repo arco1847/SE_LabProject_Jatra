@@ -39,12 +39,7 @@ else
 ?>
 <!DOCTYPE html>
 
-
 <html>
-
-    
-   
-    
     <style>
     
         *{margin: 0; padding: 0;}
