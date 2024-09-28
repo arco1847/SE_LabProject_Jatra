@@ -1,11 +1,12 @@
 <?php
 session_start();
-$email=$_SESSION['email'];
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$email = $_SESSION['email'];
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";
@@ -14,16 +15,16 @@ else
 {
 	echo"conn false";
 }
- $sql="SELECT * FROM review WHERE email='$email'";
- $r=mysqli_query($con,$sql);
- $data=mysqli_fetch_assoc($r);
- $rating=$data['rating'];
-$comment=$data['comment'];
+ $sql = "SELECT * FROM review WHERE email='$email'";
+ $r = mysqli_query($con,$sql);
+ $data = mysqli_fetch_assoc($r);
+ $rating = $data['rating'];
+$comment = $data['comment'];
  if(isset($_POST['rating']) && isset($_POST['comment'])){
     $rating=$_POST['rating'];
     $comment=$_POST['comment'];
-$sql="UPDATE review SET rating='$rating',comment='$comment' WHERE email='$email'";
-$r=mysqli_query($con,$sql);
+$sql = "UPDATE review SET rating='$rating',comment='$comment' WHERE email='$email'";
+$r = mysqli_query($con,$sql);
 if($r)
 {
 	echo"update succesfully";
