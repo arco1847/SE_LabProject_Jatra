@@ -1,11 +1,13 @@
 <?php
 session_start();
-$email=$_SESSION['email'];
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$email = $_SESSION['email'];
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
+
 if($con)
 {
 	echo"";
@@ -14,6 +16,8 @@ else
 {
 	echo"conn false";
 }
+
+
 $Number_plat=$_GET['Number_plat'];
 $Price=$_GET['Price'];
 $sr="SELECT * FROM customer_details_b where Number_plat='$Number_plat'";

@@ -1,11 +1,12 @@
 <?php
 session_start();
-$email=$_SESSION['email'];
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$email = $_SESSION['email'];
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"conn true";
@@ -14,9 +15,10 @@ else
 {
 	echo"conn false";
 }
-$sr="SELECT * FROM customer_details_e ORDER BY p_id DESC";
-$rr=mysqli_query($con,$sr);
-$data=mysqli_fetch_assoc($rr); 
+$sr = "SELECT * FROM customer_details_e ORDER BY p_id DESC";
+$rr = mysqli_query($con,$sr);
+$data = mysqli_fetch_assoc($rr);
+
 if(mysqli_num_rows($rr)==0)
 {
     $p_id=1;
@@ -28,6 +30,8 @@ else{
     header("Location:not.php?");
   }
 }
+
+
 $Number_PLate = $_GET['Number_PLate'];
 $Price=$_GET['Price'];
 $sr="SELECT * FROM customer_details_c where Number_PLate='$Number_PLate'";
@@ -36,12 +40,16 @@ $data=mysqli_fetch_array($rr);
 if($data){
   header("Location:not.php?");
 }
+
+
 $sr="SELECT * FROM customer_details_e where Number_PLate='$Number_PLate'";
 $rr=mysqli_query($con,$sr);
 $data=mysqli_fetch_array($rr);
 if($data){
   header("Location:not.php?");
 }
+
+
 $qr="SELECT * FROM register WHERE email='$email'";
 $rq=mysqli_query($con,$qr);
 

@@ -45,12 +45,13 @@ else
 {
 	echo"co/nn false";
 }
-$q="SELECT customer_details_t.name,customer_details_t.email,
+$q = "SELECT customer_details_t.name,customer_details_t.email,
 customer_details_t.contactno,truck.Seat,customer_details_t.pickup_address,
 customer_details_t.pickup_date_time,customer_details_t.location,customer_details_t.Price,customer_details_t.reason,truck.Number_Plate FROM truck JOIN customer_details_t ON customer_details_t.Number_Plate=truck.Number_Plate
  GROUP BY customer_details_t.name,customer_details_t.email,customer_details_t.contactno,truck.Seat,
  customer_details_t.pickup_address,customer_details_t.pickup_date_time,customer_details_t.location,customer_details_t.Price,customer_details_t.reason,truck.Number_Plate";
- $r=mysqli_query($con,$q);
+ $r = mysqli_query($con,$q);
+
 if($r)
 {
 while($data=mysqli_fetch_assoc($r)){

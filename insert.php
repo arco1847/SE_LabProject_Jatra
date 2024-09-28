@@ -1,11 +1,12 @@
 <?php
 session_start();
-$email=$_SESSION['email'];
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$email = $_SESSION['email'];
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";
@@ -14,27 +15,35 @@ else
 {
 	echo"conn false";
 }
-$Number_PLate=$_GET['Number_PLate'];
-$Price=$_GET['Price'];
-$sr="SELECT * FROM customer_details_c where Number_PLate='$Number_PLate'";
-$rr=mysqli_query($con,$sr);
-$data=mysqli_fetch_array($rr);
+
+
+$Number_PLate = $_GET['Number_PLate'];
+$Price = $_GET['Price'];
+$sr = "SELECT * FROM customer_details_c where Number_PLate='$Number_PLate'";
+$rr = mysqli_query($con,$sr);
+$data = mysqli_fetch_array($rr);
+
 if($data){
   header("Location:not.php?");
 }
-$sr="SELECT * FROM customer_details_e where Number_PLate='$Number_PLate'";
-$rr=mysqli_query($con,$sr);
-$data=mysqli_fetch_array($rr);
+
+$sr = "SELECT * FROM customer_details_e where Number_PLate='$Number_PLate'";
+$rr = mysqli_query($con,$sr);
+$data = mysqli_fetch_array($rr);
+
 if($data){
   header("Location:not.php?");
 }
-$qr="SELECT * FROM register WHERE email='$email'";
-$rq=mysqli_query($con,$qr);
+
+$qr = "SELECT * FROM register WHERE email='$email'";
+$rq = mysqli_query($con,$qr);
 
   $data=mysqli_fetch_assoc($rq);
     $name=$data['name'];
 $email=$data['email'];
 $contactno=$data['contactno'];
+
+
 if(isset($_POST['pickup_address']) && isset($_POST['pickup_date'])&& isset($_POST['pickup_time'])  && isset($_POST['location']) && isset($_POST['price']) && isset($_POST['reason'])  && isset($_POST['days'])){
     $contactno=$_POST['contactno'];
     $pickup_address=$_POST['pickup_address'];

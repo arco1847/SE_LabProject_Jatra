@@ -1,11 +1,12 @@
 <?php
 session_start();
-$email=$_SESSION['email'];
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$email = $_SESSION['email'];
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";
@@ -14,21 +15,27 @@ else
 {
 	echo"conn false";
 }
-$Number_Plate=$_GET['Number_Plate'];
-$Price=$_GET['Price'];
-$sr="SELECT * FROM customer_details_t where Number_Plate='$Number_Plate'";
-$rr=mysqli_query($con,$sr);
-$data=mysqli_fetch_array($rr);
+
+
+$Number_Plate = $_GET['Number_Plate'];
+$Price = $_GET['Price'];
+$sr = "SELECT * FROM customer_details_t where Number_Plate='$Number_Plate'";
+$rr = mysqli_query($con,$sr);
+$data = mysqli_fetch_array($rr);
+
 if($data){
   header("Location:not.php?");
 }
-$qr="SELECT * FROM register WHERE email='$email'";
-$rq=mysqli_query($con,$qr);
 
-  $data=mysqli_fetch_assoc($rq);
-    $name=$data['name'];
-$email=$data['email'];
-$contactno=$data['contactno'];
+$qr = "SELECT * FROM register WHERE email='$email'";
+$rq = mysqli_query($con,$qr);
+
+  $data = mysqli_fetch_assoc($rq);
+    $name = $data['name'];
+$email = $data['email'];
+$contactno = $data['contactno'];
+
+
 if(isset($_POST['pickup_address']) && isset($_POST['pickup_date'])&& isset($_POST['pickup_time']) && isset($_POST['location']) && isset($_POST['price']) && isset($_POST['reason'])){
     $pickup_address=$_POST['pickup_address'];
     $pickup_date=$_POST['pickup_date'];
@@ -39,8 +46,9 @@ if(isset($_POST['pickup_address']) && isset($_POST['pickup_date'])&& isset($_POS
     $days=$_POST['days'];
 
 
-$q="INSERT INTO customer_details_t(name,email,contactno,pickup_address,pickup_date,pickup_time,price,reason,location,Number_Plate,days)VALUES('$name','$email','$contactno','$pickup_address','$pickup_date','$pickup_time','$price','$reason','$location','$Number_Plate','$days')";
-$r=mysqli_query($con,$q);
+$q = "INSERT INTO customer_details_t(name,email,contactno,pickup_address,pickup_date,pickup_time,price,reason,location,Number_Plate,days)VALUES('$name','$email','$contactno','$pickup_address','$pickup_date','$pickup_time','$price','$reason','$location','$Number_Plate','$days')";
+$r = mysqli_query($con,$q);
+
 if($r)
 {
   echo"<h1>ordered succesfull</h1>";
