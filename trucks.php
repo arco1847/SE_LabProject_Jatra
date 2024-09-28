@@ -31,12 +31,14 @@ a:hover, a:active {
 	
 <table>
 <tr><th>Number_Plate</th><th>Price</th><th>Update</th><th>Delete</th></tr>
+
 <?php
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";
@@ -45,8 +47,8 @@ else
 {
 	echo"conn false";
 }
-$show="SELECT * FROM truck";
-$q=mysqli_query($con,$show);
+$show = "SELECT * FROM truck";
+$q = mysqli_query($con,$show);
 if($q)
 {
 while($data=mysqli_fetch_assoc($q))

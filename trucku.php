@@ -1,9 +1,10 @@
 <?php
-$hostname='localhost';
-$username='root';
-$password='';
-$dbname='jatra';
-$con=mysqli_connect($hostname,$username,$password,$dbname);
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'jatra';
+$con = mysqli_connect($hostname,$username,$password,$dbname);
+
 if($con)
 {
 	echo"";
@@ -12,17 +13,18 @@ else
 {
 	echo"conn false";
 }
- $Number_Plate= $_GET['Number_Plate'];
- $sql="SELECT * FROM truck WHERE Number_Plate='$Number_Plate'";
- $r=mysqli_query($con,$sql);
- $data=mysqli_fetch_assoc($r);
- $Number_Plate=$data['Number_Plate'];
-$Price=$data['Price'];
+ $Number_Plate = $_GET['Number_Plate'];
+ $sql = "SELECT * FROM truck WHERE Number_Plate='$Number_Plate'";
+ $r = mysqli_query($con,$sql);
+ $data = mysqli_fetch_assoc($r);
+ $Number_Plate = $data['Number_Plate'];
+$Price = $data['Price'];
  if(isset($_POST['Number_Plate']) && isset($_POST['Price'])){
     $Number_Plate=$_POST['Number_Plate'];
-$Price=$_POST['Price'];
-$sql="UPDATE truck SET Number_Plate='$Number_Plate',Price='$Price' WHERE Number_Plate='$Number_Plate'";
-$r=mysqli_query($con,$sql);
+$Price = $_POST['Price'];
+$sql = "UPDATE truck SET Number_Plate='$Number_Plate',Price='$Price' WHERE Number_Plate='$Number_Plate'";
+$r = mysqli_query($con,$sql);
+
 if($r)
 {
 	echo"update succesfully";
