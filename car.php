@@ -1,7 +1,11 @@
 <!doctype html>
+
 <html>
+
     <head>
+
         <style>
+
             a:link, a:visited {
   background-color: #f44336;
   color: white;
@@ -21,4 +25,5 @@
           
             </body>
     </head>
+
 </html>

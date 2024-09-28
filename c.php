@@ -19,13 +19,15 @@
   display: table;
   clear: both;
 }
+
 div.gallery {
-    
+
   margin: 10px;
   border: 1px solid #ccc;
   float: left;
   width: 450px;
 }
+
 div.gallery:hover {
   border: 1px solid #777;
 }
@@ -108,12 +110,12 @@ if(mysqli_num_rows($rr)>0)
 <div class="column">
       <div class="gallery">
       <?php
-      $q="SELECT * FROM bus";
-      $r=mysqli_query($con,$q);
-        while($data=mysqli_fetch_assoc($r)){
+      $q = "SELECT * FROM bus";
+      $r = mysqli_query($con,$q);
+        while($data = mysqli_fetch_assoc($r)){
           if($data['Number_plat']=='dhaka-metro-ca-13-11'){
-          $Number_plat= $data['Number_plat'];
-          $Price=$data['Price'];
+          $Number_plat = $data['Number_plat'];
+          $Price = $data['Price'];
           echo"<a href='insert_c.php?Number_plat=$data[Number_plat] & Price=$data[Price]'><img src='dd.jpg' alt='Norway' style='width:100%' padding:10px /> </a>";
       
     }
@@ -131,12 +133,12 @@ if(mysqli_num_rows($rr)>0)
       <div class="column">
       <div class="gallery">
       <?php
-      $q="SELECT * FROM bus";
-      $r=mysqli_query($con,$q);
-        while($data=mysqli_fetch_assoc($r)){
+      $q = "SELECT * FROM bus";
+      $r = mysqli_query($con,$q);
+        while($data = mysqli_fetch_assoc($r)){
           if($data['Number_plat']=='dhaka-metro-ca-14-11'){
-          $Number_plat= $data['Number_plat'];
-          $Price=$data['Price'];
+          $Number_plat = $data['Number_plat'];
+          $Price = $data['Price'];
           echo"<a href='insert_c.php?Number_plat=$data[Number_plat] & Price=$data[Price]'><img src='images (6).jpg' alt='Norway' style='width:100%' padding:10px /> </a>";
       
     }
